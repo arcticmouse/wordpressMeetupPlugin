@@ -3,7 +3,7 @@
  * Plugin Name: Google Analytics Plugin
  * Plugin URI: 
  * Description: add google analytics code to the top of your website
- * Version: 1.0
+ * Version: 1.1
  * Author: Leta
  * License: A "Slug" license name e.g. GPL2
  *
