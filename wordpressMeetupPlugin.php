@@ -31,9 +31,6 @@
 * 1. add code to header
 ***************************************************************/
 
-//the hook
-add_action( 'wp_head', 'add_my_google_analytics_code_to_header' );
-
 //the call back
 function add_my_google_analytics_code_to_header() {
 	//$ga_code = "UA-46249838-1";
@@ -47,6 +44,9 @@ ga('send', 'pageview');
 		} else return;
 }
 
+//the hook
+add_action( 'wp_head', 'add_my_google_analytics_code_to_header' );
+
 
 
 
@@ -54,10 +54,6 @@ ga('send', 'pageview');
 /***************************************************************
 * 2. add option to WP settings
 ***************************************************************/
-
-//the hooks
-add_action( 'admin_menu', 'add_my_google_analytics_code_settings' );
-add_action( 'admin_init', 'register_ga_code_dynamic_settings' );
 
 //the functions
 function add_my_google_analytics_code_settings(){
@@ -67,6 +63,12 @@ function add_my_google_analytics_code_settings(){
 function register_ga_code_dynamic_settings() {
 	register_setting( 'ga_code_dynamic_option_group', 'ga_code_options_text' );
 }
+
+//the hooks
+add_action( 'admin_menu', 'add_my_google_analytics_code_settings' );
+add_action( 'admin_init', 'register_ga_code_dynamic_settings' );
+
+
 
 
 
